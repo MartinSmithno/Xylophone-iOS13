@@ -18,25 +18,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        
-        let buttonTitle = sender.title(for: .normal)!
-        if buttonTitle.contains("C"){
-            playSound(fileName: "C")
-        }else if buttonTitle.contains("D"){
-            playSound(fileName: "D")
-        }else if buttonTitle.contains("E"){
-            playSound(fileName: "E")
-        }else if buttonTitle.contains("F"){
-            playSound(fileName: "F")
-        }else if buttonTitle.contains("G"){
-            playSound(fileName: "G")
-        }else if buttonTitle.contains("A"){
-            playSound(fileName: "A")
-        }else if buttonTitle.contains("B"){
-            playSound(fileName: "B")
-        }
-        
-        
+        //Unlem isaretinin anlami "ben kontrol ettim sender.currentTitle her zaman String veriyor" demektir
+        playSound(fileName: sender.currentTitle!)
+        print(sender.currentTitle!)
     }
     
     

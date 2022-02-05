@@ -18,12 +18,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
+        
+        let buttonTitle = sender.title(for: .normal)!
+        if buttonTitle.contains("C"){
+            playSound(fileName: "C")
+        }else if buttonTitle.contains("D"){
+            playSound(fileName: "D")
+        }else if buttonTitle.contains("E"){
+            playSound(fileName: "E")
+        }else if buttonTitle.contains("F"){
+            playSound(fileName: "F")
+        }else if buttonTitle.contains("G"){
+            playSound(fileName: "G")
+        }else if buttonTitle.contains("A"){
+            playSound(fileName: "A")
+        }else if buttonTitle.contains("B"){
+            playSound(fileName: "B")
+        }
+        
+        
     }
     
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(fileName: String) {
+        let url = Bundle.main.url(forResource: fileName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
     }
